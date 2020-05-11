@@ -35,6 +35,17 @@ public class Fila {
 		end = newNode;
 	}
 	
+	public Paciente dequeue() {
+		Paciente p = start.patient;
+		start = start.next;
+		if (start == null)
+			end = null;
+		return p;
+	}
 	
+	
+	public Paciente first() {
+		return start.patient;
+	}
 
 }

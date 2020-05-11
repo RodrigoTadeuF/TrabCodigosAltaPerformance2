@@ -8,6 +8,8 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		int opcao = 0;
+		Fila fila = new Fila();
+		fila.init();
 		
 		System.out.println("Bem vindo ao atendimento desta unidade!");
 		System.out.println("Selecione uma das opeções abaixo: ");
@@ -21,27 +23,26 @@ public class Main {
 			
 			switch(opcao) {
 			case 1:
-				
+				Paciente p = new Paciente();
+				// Logica para preencher os dados do paciente
+				fila.enqueue(p);
 				break;
 			case 2:
-				
+				// Dequeue
+				// Logica das perguntas e encaminhamento
+				// Logica internacao
 				break;
 			case 3:
-				
+				//Logica liberacao internacao
 				break;
 			
 			default:
 				System.out.println("Até breve e fique bem!");
 			}
 		}
-		
-		Paciente p1 = new Paciente(1, "Rodrigo Tadeu", "39055568805");
-		Fila fila = new Fila();
-		
-		fila.init();
-		fila.enqueue(p1);
-		
 
+		
+		sc.close();
 	}
 
 }
