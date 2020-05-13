@@ -2,24 +2,24 @@ package br.com.fiap.cap;
 
 public class Paciente {
 
-	private Integer id;
+	private Integer registro;
 	private String nome;
 	private String cpf;
 	
 	public Paciente() {	}
 	
-	public Paciente(Integer id, String nome, String cpf) {
-		this.id = id;
+	public Paciente(Integer registro, String nome, String cpf) {
+		this.registro = registro;
 		this.nome = nome;
 		this.cpf = cpf;
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getRegistro() {
+		return registro;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setRegistro(Integer registro) {
+		this.registro = registro;
 	}
 
 	public String getNome() {
