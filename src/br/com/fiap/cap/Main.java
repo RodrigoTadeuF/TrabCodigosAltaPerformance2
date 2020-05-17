@@ -9,7 +9,9 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int registro, opcao = 0;
 		String nome, cpf;
+		String [] perguntas = {"Está com tosse?", "Está com falta de ar?", "Está com febre?"};
 		String [] respostas = new String [3];
+		String [] leitos = new String [2];
 		
 		Fila atendimento = new Fila();
 		Fila internacao = new Fila();
@@ -52,19 +54,50 @@ public class Main {
 				
 			case 2:
 				if(!atendimento.isEmpty()) {
-					System.out.println("Retirado da lista: " + atendimento.dequeue().getNome());
+					Paciente atendido = atendimento.dequeue();
+					System.out.println("Retirado da lista: " + atendido.getNome());
 		
-					for (int i = 0; i < respostas.length; i++) {
-						String resposta;
-						respostas[i] = resposta;
+					sc.nextLine();
+					
+					for (int i = 0; i< perguntas.length; i++) {
+						System.out.println(perguntas[i]);
+						respostas[i] = sc.nextLine().toUpperCase();
 					}
-					//temperatura, tosse seca , dificulda
 					
+					for (int i = 0; i < respostas.length; i++) {
+						System.out.println(respostas[i]);
+					}
 					
+					if (respostas[0].equals("SIM") && respostas[1].equals("SIM") && respostas[2].equals("SIM")) {
+						for (int i = 0; i < leitos.length; i++) {
+							if(leitos[i] == null) {
+								leitos[i] = atendido.getCpf();
+							} else {
+								atendimento.enqueue(atendido);
+								System.out.println("Adicionado na lista de internação.");
+							}
+						}
+					}
 					
+					else if(respostas[1].equals("SIM")) {
+						for (int i = 0; i < leitos.length; i++) {
+							if(leitos[i] == null) {
+								leitos[i] = atendido.getCpf();
+							} else {
+								atendimento.enqueue(atendido);
+							}
+						}
+					}
+					else {
+						System.out.println("Você foi liberado, fique bem!");
+					}	
+					
+					for (int i = 0; i < leitos.length; i++) {
+						System.out.println(leitos[i]);
+					}
 				}
-				// Logica das perguntas e encaminhamento
-				// Logica internacao
+				
+				
 				break;
 			case 3:
 				//Logica liberacao internacao
