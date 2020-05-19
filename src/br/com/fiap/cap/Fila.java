@@ -43,9 +43,7 @@ public class Fila {
 		return p;
 	}
 	
-	
 	public Paciente first() {
 		return start.patient;
 	}
-
 }
