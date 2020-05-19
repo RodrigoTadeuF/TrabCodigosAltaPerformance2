@@ -105,17 +105,18 @@ public class Main {
 							}
 						}
 
+						System.out.println("");
+						System.out.println(" ----------------------------------");
+						System.out.println("|CPF's dos pacientes nos leitos:   |");
+						System.out.println(" ----------------------------------");
+						
 						for (int i = 0; i < leitos.length; i++) {
 							if (leitos[i] != null) {
-								System.out.println("");
-								System.out.println(" ----------------------------");
-								System.out.println("|CPF do paciente no leito:   |");
-								System.out.println(" ----------------------------");
 								System.out.println(" " + leitos[i]);
-								System.out.println(" -----------------------------");
+								System.out.println(" ----------------------------------");
 							}else {
-								System.out.println(" Leito disponível");
-								System.out.println(" -----------------------------");
+								System.out.println(" Leito disp1onível");
+								System.out.println(" ----------------------------------");
 							}
 						}
 					} else {
@@ -146,9 +147,9 @@ public class Main {
 
 					if (libera.equals("SIM")) {
 						System.out.println("");
-						System.out.println(" --------------------------------------");
-						System.out.println("| Paciente " + leitos[0] + " liberado! |");
-						System.out.println(" --------------------------------------");
+						System.out.println(" ----------------------------------------------------------");
+						System.out.println("  Paciente portador do CPF: " + leitos[0] + ", liberado! ");
+						System.out.println(" ----------------------------------------------------------");
 
 						if (leitos[1] != null) {
 							if (!internacao.isEmpty()) {
@@ -161,9 +162,9 @@ public class Main {
 							}
 						} else {
 							System.out.println("");
-							System.out.println(" -------------------------------------------");
-							System.out.println("| A fila de leitos e internação está vazia! |");
-							System.out.println(" -------------------------------------------");
+							System.out.println(" ----------------------------------------------");
+							System.out.println("| As fila de leitos e internação estão vazias! |");
+							System.out.println(" ----------------------------------------------");
 							System.out.println("");
 							topo = 0;
 							leitos[topo] = null;
